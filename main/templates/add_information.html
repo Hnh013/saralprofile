@@ -1,0 +1,713 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<meta charset="utf-8" />
+    <title>Adding Details | Saral Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern" />		
+	{% endblock %}
+    {% block content %}	   
+    <section class="bg-profile d-table w-100 bg-primary">
+        <div class="container mt-lg-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+                    <div class="sidebar sticky-bar p-4 rounded shadow">
+                        <div class="widget">
+                            <div class="row">
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#profile" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Personal<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#contact" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-users-alt"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Contact<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#education" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-users-alt"></i></span>
+                                        <h6 class="title text-dark h6 my-0"> Education<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#experience" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-file"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Experience<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#skill" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-envelope-star"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Skills<br>Set</h6>  
+                                    </a>
+                                </div>                               
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#certification" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Certification<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#project" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Project<br>Details</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="#social" class="accounts active rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Social<br>Network</h6>
+                                    </a>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-8 col-12">
+                    <div class="card border-0 rounded shadow" id="profile">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Personal Details :</h5>
+                             <form method="POST" action="{% url 'addpers' %}" enctype="multipart/form-data">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="mt-3 text-md-left text-center d-sm-flex">
+                                    <img src="{% static 'images/client/05.jpg' %}" class="avatar float-md-left avatar-medium rounded-circle shadow mr-md-4" alt="">
+                                    
+                                    <div class="mt-md-4 mt-3 mt-sm-0">
+                                        <a href="javascript:void(0)" class="btn btn-primary mt-2"><input type="file" name="image" id="image"></a>
+                                        <a href="javascript:void(0)" class="btn btn-outline-primary mt-2 ml-2">Upload</a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="name" id="first" type="text" class="form-control pl-5" placeholder=" Name :">
+                                        </div>
+                                    </div><!--end col-->
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>Occupation</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark fea icon-sm icons"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                                            <input name="occupation" id="occupation" type="text" class="form-control pl-5" placeholder="Occupation :">
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Nationality</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark fea icon-sm icons"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                                            <input name="nationality" id="nationality" type="text" class="form-control pl-5" value="Indian">
+                                        </div> 
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-lg-12">
+                                        <div class="form-group position-relative">
+                                            <label>Objective</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle fea icon-sm icons"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                            <textarea name="objective" id="comments" rows="4" class="form-control pl-5" placeholder="Add a professional summary."></textarea>
+                                        </div>
+                                    </div>
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="profile">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">About:</h5>
+                            <form method="POST" action="{% url 'addabout' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> About Me</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="aboutme" id="aboutme" type="text" class="form-control pl-5" placeholder="About Me :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="profile">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Strengths:</h5>
+                            <form method="POST" action="{% url 'addstren' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Your Strength/Strong Points</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="point" id="point" type="text" class="form-control pl-5" placeholder=" Name :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="profile">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Weaknesses:</h5>
+                            <form method="POST" action="{% url 'addweak' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Your Weak Points</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="point" id="point" type="text" class="form-control pl-5" placeholder=" Name :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="profile">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Hobbies:</h5>
+                            <form method="POST" action="{% url 'addhobby' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Your hobby</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder=" Name of hobby :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="contact">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Phone Number:</h5>
+                            <form method="POST" action="{% url 'addphone' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Your Phone number</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="number" id="number" type="text" class="form-control pl-5" placeholder=" Write phone number here  :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="contact">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Email:</h5>
+                            <form method="POST" action="{% url 'addmail' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Your e-mail</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="mail" id="mail" type="text" class="form-control pl-5" placeholder=" Write your email here :">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="contact">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Address :</h5>
+                            <form method="POST" action="{% url 'addaddress' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>Address Type</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <select class="form-control custom-select" name="address_type"id="address_type">
+                                                <option selected=""></option>
+                                                <option>Permanent Address</option>
+                                                <option>Corresponding Address</option>
+                                            </select>
+                                        </div> 
+                                    </div><!--end col-->
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>House Number </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="house_no" id="house_no" type="text" class="form-control pl-5" value="House no.">
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Street </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="street" id="street" type="text" class="form-control pl-5" value="Street name">
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>Landmark </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="landmark" id="landmark" type="text" class="form-control pl-5" value="None">
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>City </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="city" id="city" type="text" class="form-control pl-5" placeholder="Write city name">
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>District </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="district" id="district" type="text" class="form-control pl-5" placeholder="Write district name">
+                                        </div> 
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <select class="form-control custom-select" name="state" id="state">
+                                                <option selected="">Delhi</option>
+                                                <option>Uttrakhand</option>
+                                                <option>Uttar Pardesh</option>
+                                                <option>Haryana</option>
+                                                <option>Punjab</option>
+                                                <option>Jammu &amp; Kashmir</option>
+                                                <option>Gujrat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Country</label>
+                                            <select class="form-control custom-select" name="country" id="country">
+                                                <option selected="">India</option>
+                                                <option>United States</option>
+                                                <option>Japan</option>
+                                                <option>China</option>
+                                                <option>Brazil</option>
+                                                <option>Norway</option>
+                                                <option>Canada</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label>Pin </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input name="pin" id="pin" type="text" class="form-control pl-5" placeholder="Write area pin">
+                                        </div> 
+                                    </div>
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    <div class="card border-0 rounded shadow" id="education">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Education Details: </h5>
+                            <div class="faq-content">
+                                <div class="accordion" id="accordionExampleone">
+                                    <div class="card border-0 rounded mb-2">
+                                        <a data-toggle="collapse" href="#collapseone" class="faq position-relative collapsed" aria-expanded="false" aria-controls="collapseone">
+                                            <div class="card-header border-0 bg-light p-3 pr-5" id="headingfifone">
+                                                <h6 class="title mb-0"> Fill Education Details </h6>
+                                            </div>
+                                        </a>
+                                        <div id="collapseone" class="collapse" aria-labelledby="headingfifone" data-parent="#accordionExampleone" style="">
+                                            <div class="card-body px-2 py-4">
+                                                <form method="POST" action="{% url 'addedu' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                                    <div class="row mt-4">   
+                                                        <div class="col-md-12">
+                                                             <div class="form-group">
+                                                                 <label>Education Type</label>
+                                                                <select class="form-control custom-select" name="edu_type" id="edu_type">
+                                                                <option selected="Under Graduation">Under Graduation</option>
+                                                                <option value="High School">High School</option>
+                                                                <option value="Intermediate">Intermediate</option>
+                                                                <option value="Diploma">Diploma</option>
+                                                                <option value="Under Graduation">Under Graduation</option>
+                                                                <option value="Post Graduation">Post Graduation</option>
+                                                                <option value="Doctrate">Doctrate</option>
+                                                                   </select>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-12">
+                                                            <div class="form-group position-relative">
+                                                                <label>Instituition Name</label>
+                                                                <input name="institution" id="institution" type="text" class="form-control" placeholder="Enter Your School/College Name followed by location">
+                                                            </div> 
+                                                        </div><!--end col-->
+                                                        <div class="col-md-12">
+                                                            <div class="form-group position-relative">
+                                                                <label>Affilitaed To</label>
+                                                                <input name="affiliation" id="affiliation" type="text" class="form-control" placeholder="Enter your board/affiliated university">
+                                                            </div> 
+                                                        </div><!--end col-->
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Starting Year</label>
+                                                                <input name="start" id="start" type="number" class="form-control" placeholder="Starting Year">                                                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Ending Year</label>
+                                                                <input name="end" id="end" type="number" class="form-control" placeholder="Ending Year">                                                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group position-relative">
+                                                                <label>Marks</label>
+                                                                <input name="marks" id="marks" type="number" step="0.10" class="form-control" placeholder="CGPA/Percentage">
+                                                            </div> 
+                                                        </div><!--end col-->
+                                                        <div class="col-md-6">
+                                                            <div class="form-group position-relative">
+                                                                <label>Stream</label>
+                                                                <input name="stream" id="stream" type="text" class="form-control" placeholder="Enter Stream/Course/Major">
+                                                            </div> 
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                </form><!--end form-->                                            
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="card border-0 rounded shadow" id="skill">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Skills:</h5>
+                            <form method="POST" action="{% url 'addskill' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                                             <div class="form-group">
+                                                                 <label>Skill Type</label>
+                                                                <select class="form-control custom-select" name="skilltype" id="skilltype">
+                                                                <option selected="Technical">Technical</option>
+                                                                <option value="Soft">Soft</option>
+                                                                
+                                                                   </select>
+                                                            </div>
+                                                        </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Skill Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Skill Name">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded shadow" id="certification">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Certifications:</h5>
+                            <form method="POST" action="{% url 'addcert' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Certification Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Certification Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                                             <div class="form-group">
+                                                                 <label>Mode</label>
+                                                                <select class="form-control custom-select" name="mode" id="mode">
+                                                                <option selected="Online">Online</option>
+                                                                <option value="Offline">Offline </option>
+                                                                
+                                                                   </select>
+                                                            </div>
+                                                        </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Certification Link</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="link" id="link" type="text" class="form-control pl-5" value="Link">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                
+
+                <div class="card border-0 rounded shadow" id="social">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Social Media Link:</h5>
+                            <form method="POST" action="{% url 'addsocial' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Platform Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="platform" id="platform" type="text" class="form-control pl-5" placeholder="Platform Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Profile Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Social media Name">
+                                        </div>
+                                                             
+                                                        </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Profile Link</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="link" id="link" type="text" class="form-control pl-5" value="Link">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                
+
+                <div class="card border-0 rounded shadow" id="project">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Project Details:</h5>
+                            <form method="POST" action="{% url 'addproject' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Project Title</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="title" id="title" type="text" class="form-control pl-5" placeholder="Project Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Project Description</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="desc" id="desc" type="text" class="form-control pl-5" placeholder="Project Description">
+                                        </div>
+                                                             
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Project Link</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="link" id="link" type="text" class="form-control pl-5" value="Link">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                    
+
+                    <div class="card border-0 rounded shadow" id="experience">
+                        <div class="card-body">
+                            <h5 class="text-md-left text-center">Previous Job Experience:</h5>
+                            <form method="POST" action="{% url 'addjob' %}">{% csrf_token %}
+                                <input type="hidden" name="resume_name" value="{{resume_name}}">
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Company Name</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="employer" id="employer" type="text" class="form-control pl-5" placeholder="Enter company/employer name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Title or Position</label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobtitle" id="jobtitle" type="text" class="form-control pl-5" placeholder="Job Title/Position">
+                                        </div>
+                                                             
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label> Desciption </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobdesc" id="jobdesc" type="text" class="form-control pl-5" placeholder="Job work summary">
+                                        </div>
+                                                             
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Job Location </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobcity" id="jobcity" type="text" class="form-control pl-5" placeholder="Job City">
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Job State </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobstate" id="jobstate" type="text" class="form-control pl-5" placeholder="Job State">
+                                        </div>
+                                    </div>
+
+                                
+
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> Start Date </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobstart" id="jobstart" type="date" class="form-control pl-5" placeholder="Starting Date">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group position-relative">
+                                            <label> End Date </label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user fea icon-sm icons"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <input name="jobend" id="jobend" type="date" class="form-control pl-5" placeholder="Ending Date">
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    
+                                </div><!--end row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save Changes">
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form><!--end form-->
+                        </div>
+                    </div>
+
+
+
+                <!--end col-->
+            </div><!--end row-->
+        </div><!--ed container-->
+
+        <br><br><br>
+
+        <div class="container"><hr><input name="resume_name" type="hidden" value="{{resume_name}}"><p align="center"><a class="btn btn-primary" href="{% url 'gr' %}">Generate My Resume</a></p></div>
+    </section>
+    {% endblock %}

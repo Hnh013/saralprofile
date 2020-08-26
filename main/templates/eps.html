@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% for rs in personal %}{{rs.name}} Resume</title>
+  <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+   <!-- Intro Section -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="eps">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-4 remove-padding eps-left-bg-color">
+                <div class="left-content">
+                  <img src="{{rs.image.url}}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h1>{{rs.name}}</h1>
+                  <h2>{{rs.occupation}}</h2>
+                  <h5>{{rs.objective}}</h5>
+                </div>{% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-4 eps-left-bg-color">
+                <div class="contact">
+                  <h2>contact me</h2>
+                  <hr>
+                  <ul>
+                    <li><img src="{% static 'assets/img/eps/location.svg' %}" alt="">{% for rs in address %}{{rs.street}},{{rs.city}},District : {{rs.district}}, State : {{rs.state}},<br>
+                      {{rs.country}} - {{rs.pin}}{% endfor %}</li>
+                    <li class="contact-padd-align"><span>{{rs.Address}}</span></li>
+                    <li><img src="{% static 'assets/img/eps/phone.svg'%}" alt="">{% for rs in phone %}{{rs.number}}{% endfor %}</li>
+                    
+                    <li><img src="{% static 'assets/img/eps/website.svg' %}" alt=""><span>{% for rs in email %}{{rs.mail}}{% endfor %}</span></li>
+                    <li class="contact-padd-align"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="experience">
+                  <h2><img src="{% static 'assets/img/eps/edu.svg' %}" alt=""> experience</h2>
+                  <hr>
+                  <div class="company">
+                    
+                    {% for rs in employment%}
+                    <div class="row">
+                      
+                      <div class="col-lg-4">
+                        <h4>{{rs.jobstart}} - {{rs.jobend }} <br>{{rs.employer}}</h4><br>
+                        <h4>{{rs.jobcity}},{{rs.jobstate }}</h4>
+                      </div>
+                      <div class="col-lg-8">
+                        <h3>{{rs.jobtitle}}</h3>
+                        <p>{{rs.jobdesc}}</p>
+                      </div>
+                    </div>
+                    {% endfor %}
+               </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-4 eps-left-bg-color">
+                <div class="skill">
+                  <h2>Pro skills</h2>
+                  <hr>
+                  <ul>
+                      {% for rs in skill %}
+                          {% if rs.skilltype == 'Technical' %}
+                    <li>{{rs.name}} <br> <img src="{% static 'assets/img/eps/skill-1.png' %}" alt=""></li>
+                      {% endif %}{% endfor %}
+                     {% for rs in skill %}
+                          {% if rs.skilltype == 'Soft' %}
+                    <li>{{rs.name}} <br> <img src="{% static 'assets/img/eps/skill-1.png' %}" alt=""></li>
+                      {% endif %}{% endfor %}
+                    
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="experience">
+                  <h2><img src="{% static '/assets/img/eps/education.svg' %}" alt=""> EDUCATION</h2>
+                  <div class="company">
+                    
+                       {% for rs in education %}
+                        <div class="row">
+                      
+                          <div class="col-lg-4">
+                            <h4>{{rs.start}} - {{rs.end}}<br><i>Institution</i>{{rs.institution}}, <i>({{rs.affiliation}})</i></h4></div>
+                          <div class="col-lg-8">
+                            <h3>{{rs.edu_type}}</h3><h5><i>Stream : </i>{{rs.stream}}</h5><h6>Marks : {{rs.marks}}</h6>
+                          </div>
+                        </div><br>
+                        {% endfor %}
+                      
+                    
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-4 eps-left-bg-color">
+                <div class="skill">
+                  <h2>Follow me</h2>
+                  <hr><ul type="circle">
+
+                  {% for rs in social %}
+                    <li type="diamond"><i>{{rs.platform}}</i><br>{{rs.link}}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="experience">
+                  <h2><img src="{% static '/assets/img/eps/preference.svg' %}" alt="">Projects</h2>
+                <hr>
+                <div class="company">
+                    <div class="row">
+
+                    
+                        
+                        
+
+                      
+                       <div class="col-lg-8">
+                        <h4> </h4><ul>
+                         {% for rs in project %}
+                          
+                           <li type="number"><u>{{rs.title}}</u><br>{{rs.desc}}<br><i>Project Link : {{rs.link}}</i></li>
+                        {% endfor %}</ul>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+               <div class="experience">
+                 <h2>Certifications</h2>
+               <hr>
+               <div class="company">
+                   <div class="row">
+
+                     <div class="col-lg-12"><ul>
+                       {% for rs in certification %}<li><u>{{rs.name}}</u>  ({{rs.mode}})<br><i> Cerificate Link : {{rs.link}}</i></li>{% endfor %}
+                     </ul></div>
+                    </div>
+                 </div>
+              </div>
+              <div class="experience">
+                 <b>Strengths - </b>  {% for rs in strength %} {{rs.point}}, <span></span>{% endfor %}
+               <hr>
+               <div class="company">
+                   <div class="row">
+                     <div class="col-lg-6">
+                       
+                     </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="experience">
+                 <b>Weakness -</b> {% for rs in weakness %}  {{rs.point}}, <span></span>{% endfor %}
+               <hr>
+               <div class="company">
+                   <div class="row">
+                     <div class="col-lg-6">
+                       
+                     </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="experience">
+                 <h2>About Me</h2>
+               <hr>
+               <div class="company">
+                   <div class="row">
+                     <div class="col-lg-12">
+                       {% for rs in about %}<p><b>{{rs.aboutme}}</b></p>{% endfor %}
+                     </div>
+                    </div>
+                 </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+  <a href="{% url 'ai' %}"><button type="button" class="btn btn-secondary btn-lg btn-block btn-center">AI Resume</button></a><br>
+  <a href="{% url 'psd' %}"><button type="button" class="btn btn-secondary btn-lg btn-block btn-center">PSD Resume</button></a>
+  </div>
+
+  <!-- end --><br><br>
+</body>
+</html>

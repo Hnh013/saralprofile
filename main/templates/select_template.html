@@ -1,0 +1,86 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<meta charset="utf-8" />
+    <title>Coose Template | Saral Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern" />		
+	{% endblock %}
+    {% block content %}	
+    <!-- Hero Start -->
+    <section class="bg-half bg-light d-table w-100">            
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <div class="page-next-level">
+                        <h4 class="title">Select a Template</h4>
+                        <div class="page-next">
+                            <nav aria-label="breadcrumb" class="d-inline-block">
+                                <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Create Resume</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Select a Template</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>  <!--end col-->
+            </div><!--end row-->
+        </div> <!--end container-->
+    </section><!--end section-->
+    <!-- Hero End -->
+
+    <!-- Shape Start -->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-white">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>                
+            </svg>
+        </div>
+    </div>
+    <!--Shape End-->
+    <section class="section">
+        <div class="container mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Select Template</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">Pick a resume template, fill it out, and land that dream job! Create and download your professional resume in less than 5 minutes.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row align-items-center">
+                <div class="col-12 mt-4 pt-2">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show">    
+                            <div class="row">
+                                
+                               
+                                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                                    <div class="card pricing-rates business-rate shadow bg-light border-0 rounded">
+                                        <img src="{% static 'images/template_image/Cascade.jpg' %}" class="img-fluid" alt="Cascade.jpg">
+                                        <a href="{% url 'resumebegin' %}" class="btn btn-primary mt-4">Use Template</a>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                                    <div class="card pricing-rates business-rate shadow bg-light border-0 rounded">
+                                        <img src="{% static 'images/template_image/classic.jpg' %}" class="img-fluid" alt="classic.jpg">
+                                        <a href="{% url 'resumebegin' %}" class="btn btn-primary mt-4">Use Template</a>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                                    <div class="card pricing-rates business-rate shadow bg-light border-0 rounded">
+                                        <img src="{% static 'images/template_image/creative.jpg' %}" class="img-fluid" alt="creative.jpg">
+                                        <a href="{% url 'resumebegin' %}" class="btn btn-primary mt-4">Use Template</a>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>   
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section>
+    {% endblock %}
